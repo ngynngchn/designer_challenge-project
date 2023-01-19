@@ -106,6 +106,10 @@ header p.logo span {
   height: 45vw;
   object-fit: cover;
   object-position: 90%;
+  transition: ease-in-out all 0.4s;
+}
+.hero img.man:hover {
+  transform: translateY(15px);
 }
 
 /* =========== (3) GALLERY =========== */

@@ -1,0 +1,9 @@
+/* =========== MIXINS =========== */
+
+@mixin btn($bdradius, $bgColor, $padding, $border) {
+	border-radius: $bdradius;
+	background-color: $bgColor;
+	padding: $padding;
+	border: $border;
+	color: $white;
+}

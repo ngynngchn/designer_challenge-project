@@ -5,22 +5,12 @@
 	font-family: "Roboto Regular";
 }
 
-/* =========== IMPORTS & MIXINS =========== */
+/* =========== IMPORTS =========== */
 @import "variables.scss";
-@import "fonts";
+@import "fonts.scss";
+@import "mixins.scss";
 
-@mixin btn($bdradius, $bgColor, $padding, $border) {
-	border-radius: $bdradius;
-	background-color: $bgColor;
-	padding: $padding;
-	border: $border;
-	color: $white;
-}
-
-html {
-	min-width: 425px;
-	transition: ease all 0.4s;
-}
+/* =========== GLOBAL STYLES =========== */
 
 h1,
 h2,
@@ -63,6 +53,11 @@ p {
 .emoji {
 	width: 40px;
 	height: 40px;
+}
+
+html {
+	min-width: 425px;
+	transition: ease all 0.4s;
 }
 
 /* =========== (1) HEADER =========== */

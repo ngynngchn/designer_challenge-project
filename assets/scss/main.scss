@@ -9,6 +9,14 @@
 @import "variables.scss";
 @import "fonts";
 
+@mixin btn($bdradius, $bgColor, $padding, $border) {
+	border-radius: $bdradius;
+	background-color: $bgColor;
+	padding: $padding;
+	border: $border;
+	color: $white;
+}
+
 html {
 	min-width: 425px;
 	transition: ease all 0.4s;
@@ -188,7 +196,6 @@ header {
 footer {
 	margin: 0 9vw;
 	text-align: center;
-	position: relative;
 	form {
 		h2 {
 			margin: 10vh 0;
@@ -205,23 +212,16 @@ footer {
 			font-size: 1.3rem;
 		}
 		input[type="submit"] {
-			border: none;
-			border-radius: 3px;
-			background-color: $highlight-color;
-			color: $white;
-			padding: 1rem 5rem;
+			@include btn(3px, $highlight-color, 1rem 5rem, none);
 			font-size: 1.2rem;
 			&:hover {
 				background: linear-gradient(to right, $highlight-color, $blue);
-				cursor: default;
+				cursor: pointer;
 			}
 		}
 	}
-	p {
-		margin-block: 20vh 2vh;
-		text-align: left;
-	}
-	/* =========== (4) CONFIRMATION POP UP =========== */
+
+	/* =========== (3.1) CONFIRMATION POP UP =========== */
 
 	.confirmation {
 		display: none;
@@ -235,22 +235,21 @@ footer {
 			font-size: 3rem;
 		}
 		p {
-			text-align: center;
-			margin: 2vw;
+			margin: 2vh 0;
 		}
 		button {
-			border-radius: 5px;
-			background-color: $blue;
-			padding: 1vw;
-			border: none;
-			color: $white;
 			transition: ease 0.3s all;
+			@include btn(5px, $blue, 1vw 2vw, none);
 			&:hover,
 			:active {
 				background-color: $highlight-color;
 				cursor: pointer;
 			}
 		}
+	}
+	p.credits {
+		margin-block: 20vh 2vh;
+		text-align: left;
 	}
 }
 

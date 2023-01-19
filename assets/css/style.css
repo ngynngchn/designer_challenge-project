@@ -185,8 +185,7 @@ header p.logo span {
 footer {
   margin: 0 9vw;
   text-align: center;
-  position: relative;
-  /* =========== (4) CONFIRMATION POP UP =========== */
+  /* =========== (3.1) CONFIRMATION POP UP =========== */
 }
 footer form h2 {
   margin: 10vh 0;
@@ -203,20 +202,16 @@ footer form input[type=email] {
   font-size: 1.3rem;
 }
 footer form input[type=submit] {
-  border: none;
   border-radius: 3px;
   background-color: #ff3571;
-  color: #fff;
   padding: 1rem 5rem;
+  border: none;
+  color: #fff;
   font-size: 1.2rem;
 }
 footer form input[type=submit]:hover {
   background: linear-gradient(to right, #ff3571, #3c30ff);
-  cursor: default;
-}
-footer p {
-  margin-block: 20vh 2vh;
-  text-align: left;
+  cursor: pointer;
 }
 footer .confirmation {
   display: none;
@@ -231,21 +226,24 @@ footer .confirmation h2 {
   font-size: 3rem;
 }
 footer .confirmation p {
-  text-align: center;
-  margin: 2vw;
+  margin: 2vh 0;
 }
 footer .confirmation button {
+  transition: ease 0.3s all;
   border-radius: 5px;
   background-color: #3c30ff;
-  padding: 1vw;
+  padding: 1vw 2vw;
   border: none;
   color: #fff;
-  transition: ease 0.3s all;
 }
 footer .confirmation button:hover,
 footer .confirmation button :active {
   background-color: #ff3571;
   cursor: pointer;
+}
+footer p.credits {
+  margin-block: 20vh 2vh;
+  text-align: left;
 }
 
 /* =========== (4) MEDIA QUERIES =========== */

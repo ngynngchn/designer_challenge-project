@@ -5,13 +5,8 @@
   font-family: "Roboto Regular";
 }
 
-html {
-  min-width: 425px;
-  transition: ease all 0.4s;
-}
-
-/* =========== COLORS =========== */
-/* =========== FONTS =========== */
+/* =========== IMPORTS & MIXINS =========== */
+/* =========== COLORS =========== */ /* =========== FONTS =========== */
 @font-face {
   font-family: "Roboto Bold";
   src: url("../fonts/Roboto/Roboto-Bold.ttf");
@@ -20,7 +15,11 @@ html {
   font-family: "Roboto Regular";
   src: url("../fonts/Roboto/Roboto-Regular.ttf");
 }
-/* =========== MIXINS =========== */
+html {
+  min-width: 425px;
+  transition: ease all 0.4s;
+}
+
 h1,
 h2,
 h3,
@@ -31,6 +30,7 @@ p.logo {
 }
 
 h1 {
+  font-size: 4.5rem;
   font-size: 4.5rem;
   margin: 2vh 0;
 }
@@ -104,7 +104,6 @@ header p.logo span {
   height: 45vw;
   object-fit: cover;
   object-position: 90%;
-  transition: ease all 0.4s;
 }
 
 /* =========== (3) GALLERY =========== */
@@ -184,9 +183,12 @@ header p.logo span {
 
 /* =========== (3) FOOTER with CONTACT FORM =========== */
 footer {
+  margin: 0 9vw;
   text-align: center;
+  position: relative;
+  /* =========== (4) CONFIRMATION POP UP =========== */
 }
-footer h2 {
+footer form h2 {
   margin: 10vh 0;
 }
 footer form input {
@@ -210,16 +212,47 @@ footer form input[type=submit] {
 }
 footer form input[type=submit]:hover {
   background: linear-gradient(to right, #ff3571, #3c30ff);
+  cursor: default;
 }
 footer p {
-  margin: 20vh 9vw 2vh;
+  margin-block: 20vh 2vh;
   text-align: left;
+}
+footer .confirmation {
+  display: none;
+  background-color: #fff;
+  margin: auto;
+  box-shadow: 0px 10px 100px #dddddd;
+  width: fit-content;
+  padding: 5vw;
+}
+footer .confirmation h2 {
+  margin: 5vh 0;
+  font-size: 3rem;
+}
+footer .confirmation p {
+  text-align: center;
+  margin: 2vw;
+}
+footer .confirmation button {
+  border-radius: 5px;
+  background-color: #3c30ff;
+  padding: 1vw;
+  border: none;
+  color: #fff;
+  transition: ease 0.3s all;
+}
+footer .confirmation button:hover,
+footer .confirmation button :active {
+  background-color: #ff3571;
+  cursor: pointer;
 }
 
 /* =========== (4) MEDIA QUERIES =========== */
 @media only screen and (max-width: 992px) {
+  /* responsive font-size */
   html {
-    font-size: 13px;
+    font-size: 14px;
   }
   /* HERO */
   .hero {
@@ -241,11 +274,9 @@ footer p {
   }
   /* CHALLENGE */
   .challenge-instructions {
-    padding: 0 9vw;
     width: 100%;
   }
   .challenge-instructions article {
-    display: flex;
     flex-wrap: wrap;
   }
 }

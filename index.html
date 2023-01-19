@@ -187,8 +187,8 @@
 		<!-- =========== (3)FOOTER with CONTACT FORM =========== -->
 
 		<footer>
-			<h2>Do you like this challenge?</h2>
-			<form action="">
+			<form action="" onsubmit="return false">
+				<h2>Do you like this challenge?</h2>
 				<label for="newsletter" class="lrg">
 					Subscribe to be the first to hear about updates, tips and
 					recommendations!
@@ -198,10 +198,25 @@
 					name="newsletter"
 					id="newsletter"
 					placeholder="Write your email here"
+					required
 				/>
-				<input type="submit" value="Subscribe" />
+				<input type="submit" value="Subscribe" onclick="getEmail()" />
 			</form>
+			<!-- =========== (4) CONFIRMATION POP UP =========== -->
+
+			<section class="confirmation">
+				<h2>🥳</h2>
+				<h2>YOUR EMAIL HAS BEEN RECEIVED</h2>
+				<h2>THANKS FOR SUBSCRIBING!</h2>
+				<p>
+					Now we just need to confirm your email address - please click the link
+					in the email we sent you. Thanks!
+				</p>
+				<button onclick="goBack()">BACK TO DESIGNERCHALLENGE.COM</button>
+			</section>
 			<p class="credits">Created with Love by a Webdesigner ❤️</p>
 		</footer>
+
+		<script src="./assets/js/main.js"></script>
 	</body>
 </html>
